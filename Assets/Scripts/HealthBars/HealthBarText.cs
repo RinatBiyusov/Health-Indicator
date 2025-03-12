@@ -1,41 +1,32 @@
-using System;
 using TMPro;
 using UnityEngine;
 
 namespace HealthBars
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
-    public class HealthBarText : MonoBehaviour
+    public class HealthBarText : HealthBar
     {
-        [SerializeField] private Health _health;
-
         private TextMeshProUGUI _healthText;
 
-        private void Awake()
+        protected override void Awake()
         {
-            _healthText = GetComponent<TextMeshProUGUI>();
-        }
-
-        private void OnEnable()
-        {
-            _health.OnHealthChanged += ChangeHealth;
+            base.Awake();
+            _healthText =  GetComponent<TextMeshProUGUI>(); 
         }
 
         private void Start()
         {
-            ChangeHealthsText();
+            SetHealthText();
         }
         
-        private void OnDisable()
+        protected override void OnHealthChange()
         {
-            _health.OnHealthChanged -= ChangeHealth;
-        }
-        
-        private void ChangeHealth()
-        {
-            ChangeHealthsText();
+            SetHealthText();
         }
 
-        private void ChangeHealthsText() => _healthText.text = $"{_health.CurrentHealth}/{_health.MaxHealth}";
+        private void SetHealthText()
+        {
+            _healthText.text = $"{Health.CurrentPoints}/{Health.MaxPoints}";
+        }
     }
 }

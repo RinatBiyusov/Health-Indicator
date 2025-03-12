@@ -4,39 +4,28 @@ using UnityEngine.UI;
 namespace HealthBars
 {
     [RequireComponent(typeof(Slider))]
-    public class HealthBarSlider : MonoBehaviour
+    public class HealthBarSlider : HealthBar
     {
-        [SerializeField] private Health _health;
-
         private float _maxSliderValue;
         private Slider _slider;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _slider = GetComponent<Slider>();
         }
-
-        private void OnEnable()
-        {
-            _health.OnHealthChanged += ChangeHealthSlider;
-        }
-
+        
         private void Start()
         {
-            _maxSliderValue = _health.MaxHealth;
+            _maxSliderValue = Health.MaxPoints;
             _slider.maxValue = _maxSliderValue;
             _slider.value = _maxSliderValue;
             _slider.wholeNumbers = false;
         }
-
-        private void OnDisable()
+        
+        protected override void OnHealthChange()
         {
-            _health.OnHealthChanged += ChangeHealthSlider;
-        }
-
-        private void ChangeHealthSlider()
-        {
-            _slider.value = _health.CurrentHealth;
+            _slider.value = Health.CurrentPoints;
         }
     }
 }
