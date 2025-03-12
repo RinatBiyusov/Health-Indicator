@@ -8,7 +8,7 @@ namespace Buttons
     
         protected override void OnButtonClick()
         {
-            HealthTarget.Heal(_healPoints);
+            HealthTarget.TakeHeal(_healPoints);
         }
     }
 }

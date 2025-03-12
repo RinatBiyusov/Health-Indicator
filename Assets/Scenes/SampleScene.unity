@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 201.10608, y: 0.000061035156}
+  m_AnchoredPosition: {x: 201.10596, y: 0}
   m_SizeDelta: {x: 0.0061950684, y: 95.5016}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8635441
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 228690896}
   - component: {fileID: 228690897}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: HealthBarSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -12.577881, y: 6}
+  m_AnchoredPosition: {x: -12.578125, y: 6}
   m_SizeDelta: {x: 138.34802, y: 124.37378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539964606
@@ -833,7 +833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.350708, y: 2.136963}
+  m_AnchoredPosition: {x: 2.350586, y: 2.136963}
   m_SizeDelta: {x: -4.7015, y: -4.2739}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704474509
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60aa914934c87c4686010b77e9fa3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxPoints: 100
 --- !u!4 &1064023575
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,7 +1237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -12.577881, y: 6}
+  m_AnchoredPosition: {x: -12.578125, y: 6}
   m_SizeDelta: {x: 138.34802, y: 124.37378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302628713
@@ -1696,7 +1696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.350708, y: 2.136963}
+  m_AnchoredPosition: {x: 2.350586, y: 2.136963}
   m_SizeDelta: {x: -4.7015, y: -4.2739}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617123322
@@ -1897,7 +1897,7 @@ GameObject:
   - component: {fileID: 2120177000}
   - component: {fileID: 2120177002}
   m_Layer: 5
-  m_Name: SmoothHealthBar
+  m_Name: HealthBarSliderSmooth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1996,6 +1996,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1064023575}
   - {fileID: 1517433569}
   - {fileID: 1414898450}
-  - {fileID: 1064023575}

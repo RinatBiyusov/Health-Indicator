@@ -1,38 +1,37 @@
-using UnityEngine;
 using System;
-using UnityEngine.Serialization;
+using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float _max;
-    
-    private readonly float _death = 0;
-    
+    [SerializeField] private float _maxPoints;
+
+    private readonly float _deathPoints = 0;
+
     public event Action Changed;
-    
+
     public float CurrentPoints { get; private set; }
     public float MaxPoints { get; private set; }
-    
+
     private void Awake()
     {
-        CurrentPoints = _max;
-        MaxPoints = _max;
+        CurrentPoints = _maxPoints;
+        MaxPoints = _maxPoints;
     }
 
     public void TakeDamage(float damage)
     {
         if (CurrentPoints <= damage)
-            CurrentPoints = _death;
+            CurrentPoints = _deathPoints;
         else
             CurrentPoints -= damage;
 
         Changed?.Invoke();
     }
 
-    public void Heal(float heal)
+    public void TakeHeal(float heal)
     {
-        if (CurrentPoints + heal >= _max)
-            CurrentPoints = _max;
+        if (CurrentPoints + heal >= _maxPoints)
+            CurrentPoints = _maxPoints;
         else
             CurrentPoints += heal;
 
