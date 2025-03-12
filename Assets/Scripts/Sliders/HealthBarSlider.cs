@@ -1,4 +1,4 @@
 public class HealthBarSlider : BaseSliders
 {
-    protected override void OnHealthChange() => Slider.value = Health.CurrentPoints;
+    protected override void OnHealthChanged() => Slider.value = Health.CurrentPoints;
 }

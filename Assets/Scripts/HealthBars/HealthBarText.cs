@@ -19,7 +19,7 @@ namespace HealthBars
             SetHealthText();
         }
         
-        protected override void OnHealthChange()
+        protected override void OnHealthChanged()
         {
             SetHealthText();
         }

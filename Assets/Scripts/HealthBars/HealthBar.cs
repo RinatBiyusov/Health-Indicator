@@ -11,7 +11,7 @@ public abstract class HealthBar : MonoBehaviour
         if (_health == null)
             return;
         
-        _health.Changed += OnHealthChange;
+        _health.Changed += OnHealthChanged;
     }
 
     private void OnDestroy()
@@ -19,8 +19,8 @@ public abstract class HealthBar : MonoBehaviour
         if (_health == null)
             return;
 
-        _health.Changed -= OnHealthChange;
+        _health.Changed -= OnHealthChanged;
     }
 
-    protected abstract void OnHealthChange();
+    protected abstract void OnHealthChanged();
 }

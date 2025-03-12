@@ -5,7 +5,7 @@ public class HealthBarSliderSmooth : BaseSliders
 {
     [Range(5, 10)] [SerializeField] private int _speedChangingHeath;
 
-    protected override void OnHealthChange()
+    protected override void OnHealthChanged()
     {
         StartCoroutine(ChangeSliderSmooth());
     }
